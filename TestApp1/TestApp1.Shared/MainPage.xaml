@@ -1,0 +1,58 @@
+﻿<Page
+	x:Class="TestApp1.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="using:TestApp1"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:toolkit="using:TestApp1.Controls"
+	Background="Red"
+	mc:Ignorable="d">
+	<StackPanel>
+		<toolkit:TabBar
+			Background="Blue"
+			Foreground="Red">
+			<toolkit:TabBar.SelectionIndicator>
+				<Grid
+					x:Name="SelectionIndicatorGrid"
+					Margin="16,0,16,4"
+					VerticalAlignment="Bottom">
+					<Rectangle
+						x:Name="SelectionIndicator"
+						Width="50"
+						Height="2"
+						Fill="Red" />
+					<Grid.RenderTransform>
+						<CompositeTransform x:Name="SelectionIndicatorTransform" />
+					</Grid.RenderTransform>
+				</Grid>
+			</toolkit:TabBar.SelectionIndicator>
+			<toolkit:TabBar.Items>
+				<toolkit:TabBarItem Content="Test0" Icon="Accept" />
+				<toolkit:TabBarItem Icon="AddFriend" />
+				<toolkit:TabBarItem Content="Test2" />
+				<toolkit:TabBarItem Content="Test3" Icon="Cancel" />
+
+
+			</toolkit:TabBar.Items>
+
+		</toolkit:TabBar>
+
+		<ListView
+			Height="64"
+			Background="Blue"
+			Foreground="Red">
+			<ListView.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</ListView.ItemsPanel>
+			<ListView.Items>
+				<x:String>Item 1</x:String>
+				<x:String>Item 2</x:String>
+				<x:String>Item 3</x:String>
+				<x:String>Item 4</x:String>
+			</ListView.Items>
+		</ListView>
+	</StackPanel>
+</Page>
